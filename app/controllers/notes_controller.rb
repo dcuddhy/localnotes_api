@@ -13,7 +13,6 @@ class NotesController <ApplicationController
     @note.save
     @notes = Note.all
     render json: @note
-##read active model docs top to bottom
 
   end
 
@@ -32,7 +31,8 @@ class NotesController <ApplicationController
   def destroy
     @note = Note.find(params[:id])
     @note.destroy
-  end
+    head :no_content
+end
 
 
 end
